@@ -13,6 +13,7 @@ app.get('/series',(req, res)=>{
 app.get('/series/:id',(req, res)=>{
     const id = req.params.id
     const serie = series.find( serie => serie.id == id)
+    console.log(serie)
     if (serie)
         res.status(200).json(serie)
     else
@@ -24,6 +25,7 @@ app.get('/series/:id',(req, res)=>{
 
 app.delete('/series/:id',(req, res)=>{
     const id = req.params.id 
+    console.log(id)
     const idx = series.findIndex(serie => serie.id == id)
     if(idx>=0) {
         series.splice(idx, 1)
