@@ -13,7 +13,7 @@ app.get('/series',(req, res)=>{
 app.get('/series/:id',(req, res)=>{
     const id = req.params.id
     const serie = series.find( serie => serie.id == id)
-    console.log(serie)
+    console.log("SERIES", serie)
     if (serie)
         res.status(200).json(serie)
     else
