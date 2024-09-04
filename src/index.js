@@ -13,6 +13,7 @@ app.get('/series',(req, res)=>{
 app.get('/series/:id',(req, res)=>{
     const id = req.params.id
     const serie = series.find( serie => serie.id == id)
+    console.log(serie)
     if (serie)
         res.status(200).json(serie)
     else
@@ -53,9 +54,7 @@ app.put('/series/:id', (req, res)=>{
         const serie = { id:series[idx].id, ...serieBody}
         series[idx] = serie
         res.status(200).json(serie)
-    } else 
-    res.status(404).json( { mensaje: `El id ${id} no se encuentra.`})
-    
+    } 
 })
 
 
