@@ -19,7 +19,6 @@ app.get('/series/:id',(req, res)=>{
         res.status(404).json( {
             mensaje: `El id ${id} no se encuentra.`
     })
-
 })
 
 app.delete('/series/:id',(req, res)=>{
